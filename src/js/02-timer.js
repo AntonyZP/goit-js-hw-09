@@ -9,6 +9,7 @@ const startBtn = document.querySelector('[data-start]');
 
 let timeToDate = null;
 let time = {};
+let timer = null;
 startBtn.disabled = true;
 
 const options = {
@@ -63,7 +64,6 @@ function convertMs(ms) {
   const seconds = addLeadingZero(
     Math.floor((((ms % day) % hour) % minute) / second)
   );
-  console.log(days, hours, minutes, seconds);
   return { days, hours, minutes, seconds };
 }
 function updateTimer() {
